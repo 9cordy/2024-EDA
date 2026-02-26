@@ -2,6 +2,8 @@
 
 This repository contains three core low-level algorithm projects developed independently using C/C++ for the "Electronic Design Automation" course. These projects cover key methodologies in the EDA flow, ranging from Logic Synthesis to Physical Design, implemented under strict performance and runtime constraints.
 
+---
+
 ## Tech Stack
 * **Programming Languages**: C/C++ (Extensive use of STL containers, pointers, and memory management)
 * **Core Technologies**: Object-Oriented Programming, Graph Theory, Heuristic Algorithms, Custom Parsers
