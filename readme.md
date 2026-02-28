@@ -1,43 +1,45 @@
-# 2024 Electronic Design Automation Core Algorithms
+# 2024 Electronic Design Automation (EDA)
 
-This repository contains three core low-level algorithm projects developed independently using C/C++ for the "Electronic Design Automation" course. These projects cover key methodologies in the EDA flow, ranging from Logic Synthesis to Physical Design, implemented under strict performance and runtime constraints.
+This repository contains three algorithmic projects developed for the "Electronic Design Automation" course in 2024. The implementations focus on core methodologies in the EDA flow, including logic optimization, circuit partitioning, and physical routing.
 
 ---
 
 ## Tech Stack
-* **Programming Languages**: C/C++ (Extensive use of STL containers, pointers, and memory management)
-* **Core Technologies**: Object-Oriented Programming, Graph Theory, Heuristic Algorithms, Custom Parsers
-* **Domain Knowledge**: Physical Design Automation, Logic Minimization, Routing
+* **Language**: C / C++
+* **Algorithms**: Fiduccia-Mattheyses (FM) Algorithm, Lee Algorithm (BFS), Graph Reduction
+* **Concepts**: Object-Oriented Programming (OOP), Directed Acyclic Graphs (DAG), Hypergraph Partitioning
 
 ---
 
 ## Projects Overview
 
-### 1. [ROBDD (Logic Optimization & Binary Decision Diagrams)](./ROBDD)
-* **Objective**: Construct Reduced Ordered Binary Decision Diagrams (ROBDDs) from Boolean equations in Sum-of-Products form and determine the optimal variable ordering that requires the minimum number of nodes.
-* **Technical Highlights**: 
-  * Achieved the strictest assignment requirement by **building the ROBDD core engine completely from scratch without using the standard CUDD package** (awarded 20% bonus). 
-  * Implemented recursive tree construction, isomorphic subgraph reduction, and dynamic node matching to optimize memory usage.
+### 1. [Binary Decision Diagram](./binary_decision_diagram)
+* **Description**: A Reduced Ordered Binary Decision Diagram (ROBDD) generator that converts Boolean functions into a canonical Directed Acyclic Graph (DAG) representation.
+* **Implementation Details**:
+  * Implemented strictly from scratch without relying on external libraries such as CUDD.
+  * Applies reduction rules to eliminate nodes with identical children and merge isomorphic subgraphs.
+  * Calculates the minimum number of nodes required for the ROBDD structure under a given variable ordering.
 
-### 2. [FM_Partition (Circuit Partitioning)](./partition)
-* **Objective**: Partition a given hardware netlist into two groups to minimize the cut size while strictly maintaining a balance factor between **0.45 and 0.55**.
-* **Technical Highlights**: 
-  * Implemented the classic **Fiduccia-Mattheyses (FM) algorithm**.
-  * Refactored a procedural C-style approach into a highly maintainable **Object-Oriented Programming (OOP)** architecture. 
-  * Optimized execution efficiency to strictly pass the 30-second time limit constraint.
+### 2. [Partitioning](./partition)
+* **Description**: A 2-way hypergraph partitioner based on the Fiduccia-Mattheyses (FM) algorithm, designed to minimize cut-size while maintaining area balance constraints.
+* **Implementation Details**:
+  * Refactored into an Object-Oriented Programming (OOP) architecture (`class FM`) for better data structure management.
+  * Features iterative cell movement based on maximum gain computation and lock status.
+  * Includes a best-state recovery mechanism to revert to the optimal partial sum of gains during passes.
 
-### 3. [Router (2D Maze Routing Algorithm)](./router)
-* **Objective**: Develop a 2D maze router for a two-terminal routing problem on a gridded routing region with blockages, aiming to connect all terminals while minimizing the total wiring grids.
-* **Technical Highlights**: 
-  * Handled complex pathfinding around blockages and implemented routing logic to prevent grid overlapping.
-  * Demonstrated practical capability in parsing grid coordinates and managing large-scale hardware routing data.
+### 3. [Maze Router](./maze_router)
+* **Description**: A grid-based Maze Router that establishes shortest available paths between pins using the Lee Algorithm (BFS-based search).
+* **Implementation Details**:
+  * Initially sorts the netlist based on Manhattan distance.
+  * Incorporates a "Rip-up and Reroute" mechanism to systematically resolve routing congestion and conflicts.
+  * Reconstructs paths via backtracing using stored predecessor coordinates.
 
 ---
 
-## How to Run
-Each project folder contains a standalone `Makefile` and test cases (`.txt` or `.hgr` files). 
+## Compilation and Execution
+Each project is independently maintained with its own `Makefile`. 
 
-To compile and execute a project:
-1. Navigate to the specific project directory.
-2. Run `make` to compile the source code into an executable binary.
-3. Execute the binary with the required input and output arguments as specified in the local instructions.
+To run a specific project:
+1. Navigate to the corresponding sub-directory.
+2. Run `make` to compile the executable.
+3. Follow the specific execution commands outlined in the local `README.md` of each project.

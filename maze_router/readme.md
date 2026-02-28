@@ -1,4 +1,4 @@
-# Global Router - Maze Routing Tool
+# Maze Router
 
 ## Introduction
 This project implements a **Maze Router** based on the **Lee Algorithm** (BFS-based shortest path search). It features a **Rip-up and Reroute** mechanism to resolve routing congestion and conflicts.
