@@ -21,8 +21,11 @@ This project implements the **Fiduccia-Mattheyses (FM) Algorithm** for 2-way hyp
 
 ## Compilation and Execution
 ```bash
-# To compile (Makefile configured for class-based FM)
+# To compile
 make
 
 # To execute
 ./FM_partition <input_file> <output_file>
+
+# To remove object files
+make clean

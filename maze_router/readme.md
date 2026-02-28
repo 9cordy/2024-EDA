@@ -16,3 +16,6 @@ make
 
 # To execute
 ./router <input_file_name> <output_file_name>
+
+# To remove object files
+make clean

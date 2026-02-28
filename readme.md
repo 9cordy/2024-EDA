@@ -42,4 +42,4 @@ Each project is independently maintained with its own `Makefile`.
 To run a specific project:
 1. Navigate to the corresponding sub-directory.
 2. Run `make` to compile the executable.
-3. Follow the specific execution commands outlined in the local `README.md` of each project.
+3. Follow the specific execution commands outlined in the local `readme.md` of each project.
