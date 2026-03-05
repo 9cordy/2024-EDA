@@ -1,6 +1,6 @@
 # 2024 Electronic Design Automation (EDA)
 
-This repository contains three algorithmic projects developed for the "Electronic Design Automation" course in 2024. The implementations focus on core methodologies in the EDA flow, including logic optimization, circuit partitioning, and physical routing.
+This repository contains three algorithmic projects implemented for the "Electronic Design Automation" course in 2024. The implementations focus on core methodologies in the EDA flow, including logic optimization, circuit partitioning, and physical routing.
 
 ---
 
